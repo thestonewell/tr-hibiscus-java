@@ -16,12 +16,14 @@
     <properties>
         <maven.compiler.release>17</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <picocli.version>4.7.5</picocli.version>
-        <okhttp.version>4.12.0</okhttp.version>
-        <jackson.version>2.16.1</jackson.version>
-        <slf4j.version>2.0.9</slf4j.version>
-        <logback.version>1.4.14</logback.version>
-        <junit.version>5.10.1</junit.version>
+        <picocli.version>4.7.7</picocli.version>
+        <okhttp.version>4.12.0</okhttp.version> 
+        <!-- <okhttp.version>5.3.2</okhttp.version>  -->
+        <jackson.version>2.20.1</jackson.version>
+        <slf4j.version>2.0.17</slf4j.version>
+        <logback.version>1.5.23</logback.version>
+        <junit.version>6.0.1</junit.version>
+        <bouncycastle.version>1.83</bouncycastle.version>
     </properties>
 
     <dependencies>
@@ -43,7 +45,7 @@
         <dependency>
             <groupId>org.java-websocket</groupId>
             <artifactId>Java-WebSocket</artifactId>
-            <version>1.5.4</version>
+            <version>1.5.7</version>
         </dependency>
 
         <!-- JSON Processing -->
@@ -69,12 +71,12 @@
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk18on</artifactId>
-            <version>1.77</version>
+            <version>${bouncycastle.version}</version>
         </dependency>
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcpkix-jdk18on</artifactId>
-            <version>1.77</version>
+            <version>${bouncycastle.version}</version>
         </dependency>
 
         <!-- Logging -->
