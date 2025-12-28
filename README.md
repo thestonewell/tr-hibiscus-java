@@ -8,11 +8,17 @@ Es kann als Basis für ein Hibiscus-Plugin genutzt werden. Freiwillige vor.
 
 - Export Trade Republic transactions to Hibiscus-compatible XML format
 - Enhanced transaction details extraction for specialized event types:
-  - **Dividends** (`ssp_corporate_action_invoice_cash`): Event type, security info, ISIN, shares, dividend per share, taxes, totals
-  - **Savings Plans** (`trading_savingsplan_executed`): Status, payment method, asset details, ISIN, transaction amounts, fees, frequency
-  - **Savebacks** (`benefits_saveback_execution`): Status, asset info, ISIN, shares purchased, fees, document availability
-  - **Interest Payouts** (`INTEREST_PAYOUT`): Average balance, annual rate, gross/net amounts, tax deductions
-  - **Legacy Transactions** (`timeline_legacy_migrated_events`): Order type, asset details, ISIN, shares, prices, fees, document counts
+  - **Card payments**: counter party
+  - **Buy order**: assest info, ISIN, shares, taxes, fees, totals
+  - **Sell order**: assest info, ISIN, shares, taxes, fees, totals
+  - **Dividends**: assest info, ISIN, shares, dividend per share, taxes, totals
+  - **Savings Plans**: payment method, asset details, ISIN, transaction amounts, fees, frequency
+  - **Savebacks**: asset info, ISIN, shares purchased, fees
+  - **Round Up**: asset info, ISIN, shares purchased, fees
+  - **Interest Payouts**: Average balance, annual rate, gross/net amounts, tax deductions
+  - **Withdrawals**: counter party name and IBAN, purpose
+  - **Deposits**: counter party name and IBAN, purpose
+  - **Tax adjustments**: tax amount
 - Filter transactions by date range using `--last-days` option
 - Include or exclude pending transactions with `--include-pending` flag
 - Track processed transactions to avoid duplicates (incremental exports)
@@ -22,6 +28,12 @@ Es kann als Basis für ein Hibiscus-Plugin genutzt werden. Freiwillige vor.
 - Chronological sorting of transactions (oldest first)
 - Parallel processing of transaction details for better performance
 - Rolling log files with configurable log levels (verbose, debug)
+
+## Open items
+
+- re-enable **Legacy Transactions**: Order type, asset details, ISIN, shares, prices, fees
+- export that documents are available
+- actually download the pdfs (and ideally rename them from pbxyz.pdf to include details like asset information in the filename)
 
 ## Prerequisites
 
@@ -107,7 +119,6 @@ The application creates the following files in the output directory:
 - `debug/transaction_<transaction-id>.json` - Debug files (when `--debug` flag is used)
 - `debug/all_transactions_summary.json` - Summary of all transactions (when `--debug` flag is used)
 
-
 ## Importing to Hibiscus
 
 1. Run the export to generate the XML file
@@ -184,6 +195,7 @@ The modular structure allows easy extension:
 ## License
 
 This project is licensed under the MIT License.
+
 It is based on https://github.com/pytr-org/pytr
 
-
+It is a fork of https://github.com/littleyoda/tr-hibiscus-java
