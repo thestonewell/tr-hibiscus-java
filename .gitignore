@@ -1,2 +1,5 @@
 target/
 logs/
+data-examples/
+dump/
+export.sh
