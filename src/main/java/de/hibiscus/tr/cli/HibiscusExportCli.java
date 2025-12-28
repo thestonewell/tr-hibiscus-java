@@ -1,23 +1,24 @@
 package de.hibiscus.tr.cli;
 
+import java.nio.file.Path;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.List;
+import java.util.concurrent.Callable;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import de.hibiscus.tr.api.TradeRepublicApi;
 import de.hibiscus.tr.auth.LoginManager;
 import de.hibiscus.tr.export.HibiscusExporter;
 import de.hibiscus.tr.model.TradeRepublicError;
 import de.hibiscus.tr.model.TransactionEvent;
 import de.hibiscus.tr.timeline.TimelineProcessor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
-
-import java.nio.file.Path;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.util.List;
-import java.util.concurrent.Callable;
 
 /**
  * Command line interface for Trade Republic to Hibiscus export
@@ -25,7 +26,7 @@ import java.util.concurrent.Callable;
 @Command(
     name = "tr-hibiscus",
     mixinStandardHelpOptions = true,
-    version = "1.0.0",
+    version = "1.1.0",
     description = "Export Trade Republic transaction data to Hibiscus banking software format"
 )
 public class HibiscusExportCli implements Callable<Integer> {
