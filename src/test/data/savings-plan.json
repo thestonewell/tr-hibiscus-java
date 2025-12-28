@@ -1,0 +1,193 @@
+{
+  "timestampAsInstant": 1756822387.235,
+  "id": "0e5b7138-a012-4aa2-aebc-bf884563de9b",
+  "title": "Snowflake (A)",
+  "subtitle": "Sparplan ausgeführt",
+  "timestamp": "2025-09-02T14:13:07.235+0000",
+  "eventType": null,
+  "amount": { "value": -50.0, "currency": "EUR" },
+  "details": {
+    "id": "0e5b7138-a012-4aa2-aebc-bf884563de9b",
+    "sections": [
+      {
+        "title": "Du hast 50,00 € gespart",
+        "data": {
+          "icon": "logos/US8334451098/v2",
+          "timestamp": "2025-09-02T14:13:07.235633Z",
+          "status": "executed"
+        },
+        "action": { "payload": "US8334451098", "type": "instrumentDetail" },
+        "type": "header"
+      },
+      {
+        "title": "Übersicht",
+        "data": [
+          {
+            "title": "Sparplan",
+            "detail": {
+              "text": "Ausgeführt",
+              "functionalStyle": "EXECUTED",
+              "type": "status"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Zahlung",
+            "detail": {
+              "text": "Cash",
+              "icon": "logos/bank_traderepublic/v2",
+              "type": "iconWithText"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Asset",
+            "detail": {
+              "text": "Snowflake (A)",
+              "displayValue": { "text": "Snowflake (A)" },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Transaktion",
+            "detail": {
+              "text": "0,251231 ×  199,02 €",
+              "action": {
+                "payload": {
+                  "id": "00000000-0000-0000-0000-000000000000",
+                  "sections": [
+                    { "title": "Transaktion", "type": "title" },
+                    {
+                      "data": [
+                        {
+                          "title": "Aktien",
+                          "detail": {
+                            "text": "0,251231",
+                            "displayValue": { "text": "0,251231" },
+                            "type": "text"
+                          },
+                          "style": "plain"
+                        },
+                        {
+                          "title": "Aktienkurs",
+                          "detail": {
+                            "text": "199,02 €",
+                            "displayValue": { "text": "199,02 €" },
+                            "type": "text"
+                          },
+                          "style": "plain"
+                        },
+                        {
+                          "title": "Summe",
+                          "detail": {
+                            "text": "50,00 €",
+                            "displayValue": { "text": "50,00 €" },
+                            "type": "text"
+                          },
+                          "style": "plain"
+                        }
+                      ],
+                      "type": "table"
+                    }
+                  ]
+                },
+                "type": "infoPage"
+              },
+              "displayValue": { "text": "199,02 €", "prefix": "0,251231 × " },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Gebühr",
+            "detail": {
+              "text": "Kostenlos",
+              "displayValue": { "text": "Kostenlos" },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Summe",
+            "detail": {
+              "text": "50,00 €",
+              "displayValue": { "text": "50,00 €" },
+              "type": "text"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "title": "Sparplan",
+        "data": [
+          {
+            "title": "",
+            "detail": {
+              "title": "Snowflake (A)",
+              "timestamp": "2025-09-02T14:13:07.235633Z",
+              "amount": "50,00 €",
+              "icon": "logos/US8334451098/v2",
+              "status": "executed",
+              "action": {
+                "payload": {
+                  "savingsPlanId": "bc1203ef-8b8b-472a-8445-8ea257c26c12"
+                },
+                "type": "openSavingsPlanOverview"
+              },
+              "subtitle": "Monatlich",
+              "type": "embeddedTimelineItem"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "title": "Dokumente",
+        "data": [
+          {
+            "title": "Abrechnungsausführung",
+            "action": {
+              "payload": "https://traderepublic-postbox-platform-production.s3.eu-central-1.amazonaws.com/timeline/postbox/2025/9/2/d5858c5c/pb1756833350889157363093014674.pdf?X-Amz-Security-Token=void",
+              "type": "browserModal"
+            },
+            "id": "8c410c4d-a855-4462-b46b-b17169f6bfe8",
+            "postboxType": "SECURITIES_SETTLEMENT_SAVINGS_PLAN"
+          }
+        ],
+        "type": "documents"
+      },
+      {
+        "title": "",
+        "data": [
+          {
+            "title": "",
+            "detail": {
+              "icon": "",
+              "action": {
+                "payload": {
+                  "contextCategory": "NHC",
+                  "contextParams": {
+                    "chat_flow_key": "NHC_0029_wealth_Failed_savings_plan_execution",
+                    "timelineEventId": "0e5b7138-a012-4aa2-aebc-bf884563de9b",
+                    "savingsPlanId": "bc1203ef-8b8b-472a-8445-8ea257c26c12",
+                    "primId": "N1476982402"
+                  }
+                },
+                "type": "customerSupportChat"
+              },
+              "style": "highlighted",
+              "type": "listItemAvatarDefault"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "table"
+      }
+    ]
+  },
+  "status": "EXECUTED"
+}

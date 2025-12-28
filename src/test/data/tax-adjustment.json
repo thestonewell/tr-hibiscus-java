@@ -1,0 +1,114 @@
+{
+  "timestampAsInstant": 1766532126,
+  "id": "21a2acda-299f-3f7c-86b0-5698aaea0516",
+  "title": "Steuerkorrektur",
+  "subtitle": null,
+  "timestamp": "2025-12-23T23:22:06.000+0000",
+  "eventType": null,
+  "amount": {
+    "value": 1.65,
+    "currency": "EUR"
+  },
+  "details": {
+    "id": "21a2acda-299f-3f7c-86b0-5698aaea0516",
+    "sections": [
+      {
+        "title": "Du hast 1,65 € erhalten",
+        "data": {
+          "icon": {
+            "asset": "logos/timeline_person/v2",
+            "badge": null
+          },
+          "timestamp": "2025-12-23T23:22:06Z",
+          "status": "executed"
+        },
+        "type": "header"
+      },
+      {
+        "title": "Übersicht",
+        "data": [
+          {
+            "title": "Status",
+            "detail": {
+              "text": "Ausgeführt",
+              "functionalStyle": "EXECUTED",
+              "type": "status"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Event",
+            "detail": {
+              "text": "Steuerkorrektur",
+              "displayValue": {
+                "text": "Steuerkorrektur"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "title": "Geschäft",
+        "data": [
+          {
+            "title": "Gesamt",
+            "detail": {
+              "text": "1,65 €",
+              "displayValue": {
+                "text": "1,65 €"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "title": "Dokumente",
+        "data": [
+          {
+            "title": "Steuerabrechnung",
+            "detail": "23.12.2025",
+            "action": {
+              "payload": "https://traderepublic-postbox-platform-production.s3.eu-central-1.amazonaws.com/timeline/postbox/2025/12/23/d5858c5c/pb1766532127650815771650775576.pdf?X-Amz-Security-Token=void",
+              "type": "browserModal"
+            },
+            "id": "0f036623-aae5-4b82-a096-5beb3d33793a",
+            "postboxType": "TAX_OPTIMIZATION_INVOICE"
+          }
+        ],
+        "type": "documents"
+      },
+      {
+        "title": "",
+        "data": [
+          {
+            "title": "",
+            "detail": {
+              "icon": "common_empty_string",
+              "action": {
+                "payload": {
+                  "contextCategory": "NHC",
+                  "contextParams": {
+                    "timelineEventId": "21a2acda-299f-3f7c-86b0-5698aaea0516",
+                    "chat_flow_key": "NHC_0029_tax_optimization_picker"
+                  }
+                },
+                "type": "customerSupportChat"
+              },
+              "style": "highlighted",
+              "type": "listItemAvatarDefault"
+            },
+            "style": "highlighted"
+          }
+        ],
+        "type": "table"
+      }
+    ]
+  },
+  "status": "EXECUTED"
+}

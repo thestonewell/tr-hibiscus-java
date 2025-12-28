@@ -1,0 +1,222 @@
+{
+  "timestampAsInstant": 1766507217.607,
+  "id": "d7b05cce-0f4e-4a04-888c-8e034a937535",
+  "title": "NVIDIA",
+  "subtitle": "Kauforder",
+  "timestamp": "2025-12-23T16:26:57.607+0000",
+  "eventType": null,
+  "amount": {
+    "value": -3792.82,
+    "currency": "EUR"
+  },
+  "details": {
+    "id": "d7b05cce-0f4e-4a04-888c-8e034a937535",
+    "sections": [
+      {
+        "title": "Du hast 3.792,82 € investiert",
+        "data": {
+          "icon": "logos/US67066G1040/v2",
+          "timestamp": "2025-12-23T16:26:57.607406Z",
+          "status": "executed"
+        },
+        "action": {
+          "payload": "US67066G1040",
+          "type": "instrumentDetail"
+        },
+        "type": "header"
+      },
+      {
+        "title": "Übersicht",
+        "data": [
+          {
+            "title": "Portfolio",
+            "detail": {
+              "text": "Brokerage",
+              "displayValue": {
+                "text": "Brokerage"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Kauf",
+            "detail": {
+              "text": "Ausgeführt",
+              "functionalStyle": "EXECUTED",
+              "type": "status"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Asset",
+            "detail": {
+              "text": "NVIDIA",
+              "displayValue": {
+                "text": "NVIDIA"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Transaktion",
+            "detail": {
+              "text": "23,8 ×  159,32 €",
+              "action": {
+                "payload": {
+                  "id": "00000000-0000-0000-0000-000000000000",
+                  "sections": [
+                    {
+                      "title": "Transaktion",
+                      "type": "title"
+                    },
+                    {
+                      "data": [
+                        {
+                          "title": "Aktien",
+                          "detail": {
+                            "text": "23,8",
+                            "displayValue": {
+                              "text": "23,8"
+                            },
+                            "type": "text"
+                          },
+                          "style": "plain"
+                        },
+                        {
+                          "title": "Aktienkurs",
+                          "detail": {
+                            "text": "159,32 €",
+                            "displayValue": {
+                              "text": "159,32 €"
+                            },
+                            "type": "text"
+                          },
+                          "style": "plain"
+                        },
+                        {
+                          "title": "Summe",
+                          "detail": {
+                            "text": "3.791,82 €",
+                            "displayValue": {
+                              "text": "3.791,82 €"
+                            },
+                            "type": "text"
+                          },
+                          "style": "plain"
+                        }
+                      ],
+                      "type": "table"
+                    }
+                  ]
+                },
+                "type": "infoPage"
+              },
+              "displayValue": {
+                "text": "159,32 €",
+                "prefix": "23,8 × "
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Gebühr",
+            "detail": {
+              "text": "1,00 €",
+              "displayValue": {
+                "text": "1,00 €"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Summe",
+            "detail": {
+              "text": "3.792,82 €",
+              "displayValue": {
+                "text": "3.792,82 €"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "title": "Dokumente",
+        "data": [
+          {
+            "title": "Abrechnung 1",
+            "action": {
+              "payload": "https://traderepublic-postbox-platform-production.s3.eu-central-1.amazonaws.com/timeline/postbox/2025/12/23/d5858c5c/pb176650722364416485359366268.pdf?X-Amz-Security-Token=void",
+              "type": "browserModal"
+            },
+            "id": "d38bdd2e-3610-4b14-b89c-a249fd3e098b",
+            "postboxType": "SECURITIES_SETTLEMENT"
+          },
+          {
+            "title": "Abrechnung 2",
+            "action": {
+              "payload": "https://traderepublic-postbox-platform-production.s3.eu-central-1.amazonaws.com/timeline/postbox/2025/12/23/d5858c5c/pb17665072237235908747554791.pdf?X-Amz-Security-Token=void",
+              "type": "browserModal"
+            },
+            "id": "f66f39f9-8e7b-4cd2-b359-8679897d2fc6",
+            "postboxType": "SECURITIES_SETTLEMENT"
+          },
+          {
+            "title": "Kosteninformation 1",
+            "action": {
+              "payload": "https://traderepublic-postbox-platform-production.s3.eu-central-1.amazonaws.com/timeline/postbox/2025/12/23/d5858c5c/pb1766507217548353269118164771.pdf?X-Amz-Security-Token=void",
+              "type": "browserModal"
+            },
+            "id": "fa371692-b0bd-4c74-9854-19d137f1b53d",
+            "postboxType": "EQUITIES_BUY_EX_ANTE"
+          },
+          {
+            "title": "Kosteninformation 2",
+            "action": {
+              "payload": "https://traderepublic-postbox-platform-production.s3.eu-central-1.amazonaws.com/timeline/postbox/2025/12/23/d5858c5c/pb1766507217548705596372758388.pdf?X-Amz-Security-Token=void",
+              "type": "browserModal"
+            },
+            "id": "d2f5b568-1fa4-4bf9-836b-f9302e9981ad",
+            "postboxType": "EQUITIES_BUY_EX_ANTE"
+          }
+        ],
+        "type": "documents"
+      },
+      {
+        "title": "",
+        "data": [
+          {
+            "title": "",
+            "detail": {
+              "icon": "",
+              "action": {
+                "payload": {
+                  "contextCategory": "NHC",
+                  "contextParams": {
+                    "chat_flow_key": "NHC_0029_wealth_buying_selling_past_trade_execution",
+                    "timelineEventId": "d7b05cce-0f4e-4a04-888c-8e034a937535",
+                    "instrumentType": "stock",
+                    "instrumentId": "US67066G1040",
+                    "groupId": "d7b05cce-0f4e-4a04-888c-8e034a937535"
+                  }
+                },
+                "type": "customerSupportChat"
+              },
+              "style": "highlighted",
+              "type": "listItemAvatarDefault"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "table"
+      }
+    ]
+  },
+  "status": "EXECUTED"
+}

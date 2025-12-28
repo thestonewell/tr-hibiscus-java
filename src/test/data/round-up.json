@@ -1,0 +1,109 @@
+{
+  "timestampAsInstant": 1765875424.397,
+  "id": "ae294ad4-eb7a-43a3-a2bc-b8263b6f1db1",
+  "title": "Allianz",
+  "subtitle": "Round up",
+  "timestamp": "2025-12-16T08:57:04.397+0000",
+  "eventType": null,
+  "amount": { "value": -16.96, "currency": "EUR" },
+  "details": {
+    "id": "ae294ad4-eb7a-43a3-a2bc-b8263b6f1db1",
+    "sections": [
+      {
+        "title": "Du hast 16,96 € investiert",
+        "data": {
+          "icon": { "asset": "logos/DE0008404005/v2", "badge": null },
+          "subtitleText": "Dez. 16 · 08:57",
+          "status": "executed"
+        },
+        "action": { "payload": "DE0008404005", "type": "instrumentDetail" },
+        "type": "header"
+      },
+      {
+        "title": "Übersicht",
+        "data": [
+          {
+            "title": "Round up",
+            "detail": {
+              "text": "Abgeschlossen",
+              "functionalStyle": "EXECUTED",
+              "type": "status"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Asset",
+            "detail": {
+              "text": "Allianz",
+              "displayValue": { "text": "Allianz" },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Transaktion",
+            "detail": {
+              "text": "0.044212 x  383,60 €",
+              "displayValue": { "text": "383,60 €", "prefix": "0.044212 x " },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Gebühr",
+            "detail": {
+              "text": "Kostenlos",
+              "displayValue": { "text": "Kostenlos" },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Gesamt",
+            "detail": {
+              "text": "16,96 €",
+              "displayValue": { "text": "16,96 €" },
+              "type": "text"
+            },
+            "style": "highlighted"
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "title": "Dokumente",
+        "data": [
+          {
+            "title": "Wertpapierabrechnung",
+            "action": {
+              "payload": "https://traderepublic-postbox-platform-production.s3.eu-central-1.amazonaws.com/timeline/postbox/2025/12/16/d5858c5c/pb17658758419021216574004598.pdf?X-Amz-Security-Token=void",
+              "type": "browserModal"
+            },
+            "id": "dce4edb8-026d-4537-8077-d29836228eca",
+            "postboxType": "SECURITIES_SETTLEMENT_SAVINGS_PLAN"
+          },
+          {
+            "title": "Kosteninformation",
+            "action": {
+              "payload": "https://traderepublic-postbox-platform-production.s3.eu-central-1.amazonaws.com/timeline/postbox/2025/12/16/d5858c5c/pb1765844448547778601186159378.pdf?X-Amz-Security-Token=void",
+              "type": "browserModal"
+            },
+            "id": "ac50edfd-97d7-4308-b90f-86fce38bce66",
+            "postboxType": "COSTS_INFO_SAVINGS_PLAN"
+          },
+          {
+            "title": "Auftragsbestätigung",
+            "action": {
+              "payload": "https://traderepublic-postbox-platform-production.s3.eu-central-1.amazonaws.com/timeline/postbox/2025/12/16/d5858c5c/pb17658444485485735186428045.pdf?X-Amz-Security-Token=void",
+              "type": "browserModal"
+            },
+            "id": "ee227094-b804-459a-a884-23b1d3e3f505",
+            "postboxType": "SAVINGS_PLAN_CREATED"
+          }
+        ],
+        "type": "documents"
+      }
+    ]
+  },
+  "status": "EXECUTED"
+}

@@ -1,0 +1,155 @@
+{
+  "timestampAsInstant": 1765952095.577,
+  "id": "4b10b6b0-72b8-451a-85cd-3ec8fc20931d",
+  "title": "Max Mustermann",
+  "subtitle": "Fertig",
+  "timestamp": "2025-12-17T06:14:55.577+0000",
+  "eventType": null,
+  "amount": { "value": 500.0, "currency": "EUR" },
+  "details": {
+    "id": "4b10b6b0-72b8-451a-85cd-3ec8fc20931d",
+    "sections": [
+      {
+        "title": "Du hast 500,00 € von Max Mustermann erhalten",
+        "data": {
+          "icon": "logos/contacts-T-Grey/v2",
+          "timestamp": "2025-12-17T06:14:55.575187Z",
+          "status": "executed"
+        },
+        "type": "header"
+      },
+      {
+        "title": "Übersicht",
+        "data": [
+          {
+            "title": "Überweisung",
+            "detail": {
+              "text": "Abgeschlossen",
+              "functionalStyle": "EXECUTED",
+              "type": "status"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Absender",
+            "detail": {
+              "text": "Max Mustermann",
+              "displayValue": { "text": "Max Mustermann" },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "IBAN",
+            "detail": {
+              "text": "..5323",
+              "action": {
+                "payload": {
+                  "id": "4b10b6b0-72b8-451a-85cd-3ec8fc20931d",
+                  "sections": [
+                    {
+                      "title": "IBAN",
+                      "data": [
+                        {
+                          "title": "DE12 3456 7890 1234 5678 90",
+                          "detail": {
+                            "icon": "logos/bank_consors/v2",
+                            "style": "highlighted",
+                            "type": "listItemAvatarDefault"
+                          },
+                          "style": "plain"
+                        }
+                      ],
+                      "type": "table"
+                    }
+                  ]
+                },
+                "type": "infoPage"
+              },
+              "displayValue": { "text": "..5323" },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Gesamt",
+            "detail": {
+              "text": "+500,00 €",
+              "displayValue": { "text": "+500,00 €" },
+              "type": "text"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "table"
+      },
+      { "data": { "text": "Umbuchung" }, "type": "note" },
+      {
+        "title": "Absender",
+        "data": [
+          {
+            "title": "Absender",
+            "detail": {
+              "text": "Max Mustermann",
+              "displayValue": { "text": "Max Mustermann" },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "IBAN",
+            "detail": {
+              "text": "DE12 3456 7890 1234 5678 90",
+              "displayValue": { "text": "DE12 3456 7890 1234 5678 90" },
+              "type": "text"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "title": "Dokument",
+        "data": [
+          {
+            "title": "Transaktionsbestätigung",
+            "action": {
+              "payload": "https://traderepublic-postbox-platform-production.s3.eu-central-1.amazonaws.com/timeline/postbox/2025/12/17/d5858c5c/pb1765952095797322078376385354.pdf?X-Amz-Security-Token=void",
+              "type": "browserModal"
+            },
+            "id": "488385d8-b4b2-45a3-bf05-4a3131eb3258",
+            "postboxType": "INCOMING_TRANSFER"
+          }
+        ],
+        "type": "documents"
+      },
+      {
+        "title": "",
+        "data": [
+          {
+            "title": "",
+            "detail": {
+              "icon": "",
+              "action": {
+                "payload": {
+                  "contextCategory": "NHC",
+                  "contextParams": {
+                    "timelineEventId": "4b10b6b0-72b8-451a-85cd-3ec8fc20931d",
+                    "transferId": "7105bb7e-bafe-45eb-a368-30095a6df790",
+                    "chat_flow_key": "NHC_0024_deposit_report_an_issue"
+                  }
+                },
+                "type": "customerSupportChat"
+              },
+              "style": "highlighted",
+              "type": "listItemAvatarDefault"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "table"
+      }
+    ]
+  },
+  "status": "EXECUTED"
+}

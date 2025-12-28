@@ -1,0 +1,263 @@
+{
+  "timestampAsInstant": 1766507154.111,
+  "id": "b7c9ba58-e8a8-4112-86f0-0731715bfacf",
+  "title": "NVIDIA",
+  "subtitle": "Verkaufsorder",
+  "timestamp": "2025-12-23T16:25:54.111+0000",
+  "eventType": null,
+  "amount": {
+    "value": 3597.36,
+    "currency": "EUR"
+  },
+  "details": {
+    "id": "b7c9ba58-e8a8-4112-86f0-0731715bfacf",
+    "sections": [
+      {
+        "title": "Du hast 3.597,36 € erhalten",
+        "data": {
+          "icon": "logos/US67066G1040/v2",
+          "timestamp": "2025-12-23T16:25:54.111413Z",
+          "status": "executed"
+        },
+        "action": {
+          "payload": "US67066G1040",
+          "type": "instrumentDetail"
+        },
+        "type": "header"
+      },
+      {
+        "title": "Übersicht",
+        "data": [
+          {
+            "title": "Portfolio",
+            "detail": {
+              "text": "Brokerage",
+              "displayValue": {
+                "text": "Brokerage"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Verkaufen",
+            "detail": {
+              "text": "Ausgeführt",
+              "functionalStyle": "EXECUTED",
+              "type": "status"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Asset",
+            "detail": {
+              "text": "NVIDIA",
+              "displayValue": {
+                "text": "NVIDIA"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Transaktion",
+            "detail": {
+              "text": "23,799441 ×  159,38 €",
+              "action": {
+                "payload": {
+                  "id": "00000000-0000-0000-0000-000000000000",
+                  "sections": [
+                    {
+                      "title": "Transaktion",
+                      "type": "title"
+                    },
+                    {
+                      "data": [
+                        {
+                          "title": "Aktien",
+                          "detail": {
+                            "text": "23,799441",
+                            "displayValue": {
+                              "text": "23,799441"
+                            },
+                            "type": "text"
+                          },
+                          "style": "plain"
+                        },
+                        {
+                          "title": "Aktienkurs",
+                          "detail": {
+                            "text": "159,38 €",
+                            "displayValue": {
+                              "text": "159,38 €"
+                            },
+                            "type": "text"
+                          },
+                          "style": "plain"
+                        },
+                        {
+                          "title": "Summe",
+                          "detail": {
+                            "text": "3.793,15 €",
+                            "displayValue": {
+                              "text": "3.793,15 €"
+                            },
+                            "type": "text"
+                          },
+                          "style": "plain"
+                        }
+                      ],
+                      "type": "table"
+                    }
+                  ]
+                },
+                "type": "infoPage"
+              },
+              "displayValue": {
+                "text": "159,38 €",
+                "prefix": "23,799441 × "
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Steuer",
+            "detail": {
+              "text": "194,79 €",
+              "displayValue": {
+                "text": "194,79 €"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Gebühr",
+            "detail": {
+              "text": "1,00 €",
+              "displayValue": {
+                "text": "1,00 €"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Summe",
+            "detail": {
+              "text": "3.597,36 €",
+              "displayValue": {
+                "text": "3.597,36 €"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "title": "Performance",
+        "data": [
+          {
+            "title": "Rendite",
+            "detail": {
+              "text": "23,93 %",
+              "trend": "positive",
+              "displayValue": {
+                "text": "23,93 %"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Gewinn",
+            "detail": {
+              "text": "732,27 €",
+              "trend": "positive",
+              "displayValue": {
+                "text": "732,27 €"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "horizontalTable"
+      },
+      {
+        "title": "Dokumente",
+        "data": [
+          {
+            "title": "Kosteninformation 1",
+            "action": {
+              "payload": "https://traderepublic-postbox-platform-production.s3.eu-central-1.amazonaws.com/timeline/postbox/2025/12/23/d5858c5c/pb17665071541094864758497682.pdf?X-Amz-Security-Token=void",
+              "type": "browserModal"
+            },
+            "id": "913e38da-7a84-4808-8dfd-df51b70a976e",
+            "postboxType": "EQUITIES_SELL_EX_ANTE"
+          },
+          {
+            "title": "Kosteninformation 2",
+            "action": {
+              "payload": "https://traderepublic-postbox-platform-production.s3.eu-central-1.amazonaws.com/timeline/postbox/2025/12/23/d5858c5c/pb176650715410710081747194842.pdf?X-Amz-Security-Token=void",
+              "type": "browserModal"
+            },
+            "id": "83f5ef11-2a2d-412a-8308-86647f24db49",
+            "postboxType": "EQUITIES_SELL_EX_ANTE"
+          },
+          {
+            "title": "Abrechnung 1",
+            "action": {
+              "payload": "https://traderepublic-postbox-platform-production.s3.eu-central-1.amazonaws.com/timeline/postbox/2025/12/23/d5858c5c/pb176650716007516421790428193.pdf?X-Amz-Security-Token=void",
+              "type": "browserModal"
+            },
+            "id": "c07df4dc-45e5-44e4-9480-0cc45620806a",
+            "postboxType": "SECURITIES_SETTLEMENT"
+          },
+          {
+            "title": "Abrechnung 2",
+            "action": {
+              "payload": "https://traderepublic-postbox-platform-production.s3.eu-central-1.amazonaws.com/timeline/postbox/2025/12/23/d5858c5c/pb17665071600754870724392937.pdf?X-Amz-Security-Token=void",
+              "type": "browserModal"
+            },
+            "id": "b0aa0fa3-90f3-40f8-8b6f-3a9ca443823a",
+            "postboxType": "SECURITIES_SETTLEMENT"
+          }
+        ],
+        "type": "documents"
+      },
+      {
+        "title": "",
+        "data": [
+          {
+            "title": "",
+            "detail": {
+              "icon": "",
+              "action": {
+                "payload": {
+                  "contextCategory": "NHC",
+                  "contextParams": {
+                    "chat_flow_key": "NHC_0029_wealth_buying_selling_past_trade_execution",
+                    "timelineEventId": "b7c9ba58-e8a8-4112-86f0-0731715bfacf",
+                    "instrumentType": "stock",
+                    "instrumentId": "US67066G1040",
+                    "groupId": "b7c9ba58-e8a8-4112-86f0-0731715bfacf"
+                  }
+                },
+                "type": "customerSupportChat"
+              },
+              "style": "highlighted",
+              "type": "listItemAvatarDefault"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "table"
+      }
+    ]
+  },
+  "status": "EXECUTED"
+}

@@ -1,0 +1,104 @@
+{
+  "timestampAsInstant": 1764620281.423,
+  "id": "019ad7e3-0cda-7339-aefc-b62c62cc27c2",
+  "title": "Zinsen",
+  "subtitle": "2 % p.a.",
+  "timestamp": "2025-12-01T20:18:01.423+0000",
+  "eventType": null,
+  "amount": {
+    "value": 25.74,
+    "currency": "EUR"
+  },
+  "details": {
+    "id": "019ad7e3-0cda-7339-aefc-b62c62cc27c2",
+    "sections": [
+      {
+        "title": "Du hast 25,74 € erhalten",
+        "data": {
+          "icon": {
+            "asset": "logos/timeline_interest_new/v2",
+            "badge": null
+          },
+          "timestamp": "2025-12-01T20:18:05.273246Z",
+          "status": "executed"
+        },
+        "type": "header"
+      },
+      {
+        "title": "Übersicht",
+        "data": [
+          {
+            "title": "Zinsen",
+            "detail": {
+              "text": "Ausgeführt",
+              "functionalStyle": "EXECUTED",
+              "type": "status"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Durchschnittssaldo",
+            "detail": {
+              "text": "21.256,73 €",
+              "displayValue": {
+                "text": "21.256,73 €"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Angesammelt",
+            "detail": {
+              "text": "34,95 €",
+              "displayValue": {
+                "text": "34,95 €"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Steuern",
+            "detail": {
+              "text": "9,21 €",
+              "displayValue": {
+                "text": "9,21 €"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Gesamt",
+            "detail": {
+              "text": "25,74 €",
+              "displayValue": {
+                "text": "25,74 €"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "title": "Dokument",
+        "data": [
+          {
+            "title": "Abrechnung",
+            "action": {
+              "payload": "https://traderepublic-postbox-platform-production.s3.eu-central-1.amazonaws.com/timeline/postbox/2025/12/1/d5858c5c/pb176462028554023924797038287.pdf?X-Amz-Security-Token=void",
+              "type": "browserModal"
+            },
+            "id": "019adb90-b557-72b0-9027-c2dc89eedd46",
+            "postboxType": ""
+          }
+        ],
+        "type": "documents"
+      }
+    ]
+  },
+  "status": "EXECUTED"
+}

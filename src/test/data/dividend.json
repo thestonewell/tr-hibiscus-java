@@ -1,0 +1,140 @@
+{
+  "timestampAsInstant": 1765803665.409,
+  "id": "a06dd0d2-a229-3eed-a7af-c55aa498951c",
+  "title": "Realty Income",
+  "subtitle": "Bardividende",
+  "timestamp": "2025-12-15T13:01:05.409+0000",
+  "eventType": null,
+  "amount": { "value": 3.47, "currency": "EUR" },
+  "details": {
+    "id": "a06dd0d2-a229-3eed-a7af-c55aa498951c",
+    "sections": [
+      {
+        "title": "Du hast 3,47 € erhalten",
+        "data": {
+          "icon": { "asset": "logos/US7561091049/v2", "badge": null },
+          "timestamp": "2025-12-15T13:01:05.409Z",
+          "status": "executed"
+        },
+        "type": "header"
+      },
+      {
+        "title": "Übersicht",
+        "data": [
+          {
+            "title": "Status",
+            "detail": {
+              "text": "Ausgeführt",
+              "functionalStyle": "EXECUTED",
+              "type": "status"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Event",
+            "detail": {
+              "text": "Bardividende",
+              "displayValue": { "text": "Bardividende" },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Wertpapier",
+            "detail": {
+              "text": "Realty Income",
+              "displayValue": { "text": "Realty Income" },
+              "type": "text"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "title": "Geschäft",
+        "data": [
+          {
+            "title": "Aktien",
+            "detail": {
+              "text": "20.390860",
+              "displayValue": { "text": "20.390860" },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Dividende pro Aktie",
+            "detail": {
+              "text": "0,27 $",
+              "displayValue": { "text": "0,27 $" },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Steuer",
+            "detail": {
+              "text": "-1,22 €",
+              "displayValue": { "text": "-1,22 €" },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Gesamt",
+            "detail": {
+              "text": "3,47 €",
+              "displayValue": { "text": "3,47 €" },
+              "type": "text"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "title": "Dokumente",
+        "data": [
+          {
+            "title": "Dokumente",
+            "detail": "15.12.2025",
+            "action": {
+              "payload": "https://traderepublic-postbox-platform-production.s3.eu-central-1.amazonaws.com/timeline/postbox/2025/12/15/d5858c5c/pb17658066207761345315425907791.pdf?X-Amz-Security-Token=void",
+              "type": "browserModal"
+            },
+            "id": "375d2798-5987-4d74-9a24-a7ddda25e819",
+            "postboxType": "CA_INCOME_INVOICE"
+          }
+        ],
+        "type": "documents"
+      },
+      {
+        "title": "",
+        "data": [
+          {
+            "title": "",
+            "detail": {
+              "icon": "common_empty_string",
+              "action": {
+                "payload": {
+                  "contextCategory": "NHC",
+                  "contextParams": {
+                    "timelineEventId": "a06dd0d2-a229-3eed-a7af-c55aa498951c",
+                    "chat_flow_key": "NHC_0029_wealth_general_question_dividends"
+                  }
+                },
+                "type": "customerSupportChat"
+              },
+              "style": "highlighted",
+              "type": "listItemAvatarDefault"
+            },
+            "style": "highlighted"
+          }
+        ],
+        "type": "table"
+      }
+    ]
+  },
+  "status": "EXECUTED"
+}

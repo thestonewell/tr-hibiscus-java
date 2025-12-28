@@ -1,0 +1,364 @@
+{
+  "timestampAsInstant": 1766049898.0,
+  "id": "fd917069-c190-55c3-a885-170263b0a3b0",
+  "title": "Shell",
+  "subtitle": null,
+  "timestamp": "2025-12-18T09:24:58.000+0000",
+  "eventType": null,
+  "amount": { "value": -123.45, "currency": "EUR" },
+  "details": {
+    "id": "fd917069-c190-55c3-a885-170263b0a3b0",
+    "sections": [
+      {
+        "title": "Du hast 123,45 € ausgegeben",
+        "data": {
+          "icon": {
+            "asset": "logos/merchant-bd06e1ee-2247-44d6-b654-4835dcc4aa07/v2",
+            "badge": null
+          },
+          "timestamp": "2025-12-18T08:25:08.907Z",
+          "status": "executed"
+        },
+        "type": "header"
+      },
+      {
+        "title": "Übersicht",
+        "data": [
+          {
+            "title": "Kartenzahlung",
+            "detail": {
+              "text": "Fertig",
+              "functionalStyle": "EXECUTED",
+              "type": "status"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Zahlung",
+            "detail": {
+              "text": "··0123",
+              "icon": "logos/bank_traderepublic/v2",
+              "type": "iconWithText"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Händler",
+            "detail": {
+              "text": "Shell",
+              "displayValue": { "text": "Shell" },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Gesamt",
+            "detail": {
+              "text": "123,45 €",
+              "displayValue": { "text": "123,45 €" },
+              "type": "text"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "title": "Vorteile",
+        "data": [
+          {
+            "title": "Allianz",
+            "detail": {
+              "title": "Allianz",
+              "timestamp": "2025-12-18T08:25:09.510183Z",
+              "amount": "0,92 €",
+              "icon": { "asset": "logos/DE0008404005/v2", "badge": null },
+              "status": "executed",
+              "action": {
+                "payload": {
+                  "id": "c33b82a5-5929-46f3-b13c-3450754796f9",
+                  "sections": [
+                    { "title": "Saveback", "type": "title" },
+                    {
+                      "data": [
+                        {
+                          "title": "Transaction",
+                          "detail": {
+                            "text": "123,45 €",
+                            "displayValue": { "text": "123,45 €" },
+                            "type": "text"
+                          },
+                          "style": "plain"
+                        },
+                        {
+                          "title": "Saveback-Anteil",
+                          "detail": {
+                            "text": "1%",
+                            "displayValue": { "text": "1%" },
+                            "type": "text"
+                          },
+                          "style": "plain"
+                        },
+                        {
+                          "title": "",
+                          "detail": {
+                            "content": {
+                              "type": "default",
+                              "title": "Saveback",
+                              "truncate": false
+                            },
+                            "trailing": {
+                              "type": "value",
+                              "title": "0,9216 €"
+                            },
+                            "type": "listItem"
+                          },
+                          "style": "plain"
+                        }
+                      ],
+                      "type": "table"
+                    },
+                    {
+                      "text": "Du erhältst Saveback auf die ersten 1.500 € auf zulässige Zahlungen pro Monat. Erfahre mehr über Saveback.",
+                      "style": "disclaimer",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "type": "infoPage"
+              },
+              "subtitle": "Saveback · 1%",
+              "type": "embeddedTimelineItem"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Allianz",
+            "detail": {
+              "title": "Allianz",
+              "timestamp": "2025-12-18T08:25:09.510765Z",
+              "amount": "0,84 €",
+              "icon": { "asset": "logos/DE0008404005/v2", "badge": null },
+              "status": "executed",
+              "action": {
+                "payload": {
+                  "id": "8c906b05-9511-48ac-be00-f367dc648806",
+                  "sections": [
+                    { "title": "Round up", "type": "title" },
+                    {
+                      "data": [
+                        {
+                          "title": "Transaction",
+                          "detail": {
+                            "text": "123,45 €",
+                            "displayValue": { "text": "123,45 €" },
+                            "type": "text"
+                          },
+                          "style": "plain"
+                        },
+                        {
+                          "title": "Aufgerundet",
+                          "detail": {
+                            "text": "93,00 €",
+                            "displayValue": { "text": "93,00 €" },
+                            "type": "text"
+                          },
+                          "style": "plain"
+                        },
+                        {
+                          "title": "Wechselgeld",
+                          "detail": {
+                            "text": "1 × 0,84 €",
+                            "displayValue": {
+                              "text": "0,84 €",
+                              "prefix": "1 ×"
+                            },
+                            "type": "text"
+                          },
+                          "style": "plain"
+                        },
+                        {
+                          "title": "Round up",
+                          "detail": {
+                            "text": "0,84 €",
+                            "displayValue": { "text": "0,84 €" },
+                            "type": "text"
+                          },
+                          "style": "highlighted"
+                        }
+                      ],
+                      "type": "table"
+                    },
+                    {
+                      "text": "Erfahre mehr über Round up.",
+                      "style": "disclaimer",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "type": "infoPage"
+              },
+              "subtitle": "Round up · 1×",
+              "type": "embeddedTimelineItem"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "data": [
+          {
+            "title": "Problem melden",
+            "detail": {
+              "text": "",
+              "action": {
+                "payload": {
+                  "id": "fd917069-c190-55c3-a885-170263b0a3b0",
+                  "sections": [
+                    { "title": "Problem melden", "type": "title" },
+                    {
+                      "data": [
+                        {
+                          "title": "Diese Transaktion kommt mir nicht bekannt vor.",
+                          "detail": {
+                            "content": {
+                              "type": "default",
+                              "title": "Diese Transaktion kommt mir nicht bekannt vor.",
+                              "truncate": false
+                            },
+                            "trailing": { "type": "chevron" },
+                            "action": {
+                              "payload": {
+                                "transactionId": "fd917069-c190-55c3-a885-170263b0a3b0",
+                                "timelineEventId": "fd917069-c190-55c3-a885-170263b0a3b0",
+                                "timelineEventTypes": [
+                                  "CARD_TRANSACTION",
+                                  "CARD_ATM_WITHDRAWAL",
+                                  "CARD_AFT",
+                                  "CARD_CASH_BACK"
+                                ],
+                                "cashAnalyticsCategories": [],
+                                "chatAction": {
+                                  "payload": {
+                                    "contextCategory": "NHC",
+                                    "contextParams": {
+                                      "chat_flow_key": "NHC_0034_card_report_fraud",
+                                      "card-dispute-txId": "fd917069-c190-55c3-a885-170263b0a3b0"
+                                    }
+                                  },
+                                  "type": "customerSupportChat"
+                                }
+                              },
+                              "type": "fraudDisputeFlow"
+                            },
+                            "type": "listItem"
+                          },
+                          "style": "plain"
+                        },
+                        {
+                          "title": "Ich habe nicht das bekommen, wofür ich bezahlt habe.",
+                          "detail": {
+                            "content": {
+                              "type": "default",
+                              "title": "Ich habe nicht das bekommen, wofür ich bezahlt habe.",
+                              "truncate": false
+                            },
+                            "trailing": { "type": "chevron" },
+                            "action": {
+                              "payload": {
+                                "type": "NON_ATM",
+                                "transactionId": "fd917069-c190-55c3-a885-170263b0a3b0",
+                                "timelineEventId": "fd917069-c190-55c3-a885-170263b0a3b0",
+                                "contactDetailsQuery": "SHELL+++0728+Kontaktdaten",
+                                "chatAction": {
+                                  "payload": {
+                                    "contextCategory": "NHC",
+                                    "contextParams": {
+                                      "chat_flow_key": "NHC_0034_card_report_not_satisfied",
+                                      "card-dispute-txId": "fd917069-c190-55c3-a885-170263b0a3b0"
+                                    }
+                                  },
+                                  "type": "customerSupportChat"
+                                }
+                              },
+                              "type": "nonFraudDisputeFlow"
+                            },
+                            "type": "listItem"
+                          },
+                          "style": "plain"
+                        },
+                        {
+                          "title": "Ein falscher Betrag wurde abgerechnet.",
+                          "detail": {
+                            "content": {
+                              "type": "default",
+                              "title": "Ein falscher Betrag wurde abgerechnet.",
+                              "truncate": false
+                            },
+                            "trailing": { "type": "chevron" },
+                            "action": {
+                              "payload": {
+                                "type": "NON_ATM",
+                                "transactionId": "fd917069-c190-55c3-a885-170263b0a3b0",
+                                "timelineEventId": "fd917069-c190-55c3-a885-170263b0a3b0",
+                                "contactDetailsQuery": "SHELL+++0728+Kontaktdaten",
+                                "chatAction": {
+                                  "payload": {
+                                    "contextCategory": "NHC",
+                                    "contextParams": {
+                                      "chat_flow_key": "NHC_0034_card_report_charged_incorrectly",
+                                      "card-dispute-txId": "fd917069-c190-55c3-a885-170263b0a3b0"
+                                    }
+                                  },
+                                  "type": "customerSupportChat"
+                                }
+                              },
+                              "type": "nonFraudDisputeFlow"
+                            },
+                            "type": "listItem"
+                          },
+                          "style": "plain"
+                        },
+                        {
+                          "title": "Etwas anderes",
+                          "detail": {
+                            "content": {
+                              "type": "default",
+                              "title": "Etwas anderes",
+                              "truncate": false
+                            },
+                            "trailing": { "type": "chevron" },
+                            "action": {
+                              "payload": {
+                                "contextCategory": "NHC",
+                                "contextParams": {
+                                  "chat_flow_key": "NHC_0034_card_tx_something_else",
+                                  "card-dispute-txId": "fd917069-c190-55c3-a885-170263b0a3b0"
+                                }
+                              },
+                              "type": "customerSupportChat"
+                            },
+                            "type": "listItem"
+                          },
+                          "style": "plain"
+                        }
+                      ],
+                      "type": "table"
+                    }
+                  ]
+                },
+                "type": "infoPage"
+              },
+              "displayValue": { "text": "" },
+              "type": "text"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "table"
+      }
+    ]
+  },
+  "status": "EXECUTED"
+}
