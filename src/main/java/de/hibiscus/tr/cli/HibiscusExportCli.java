@@ -15,6 +15,7 @@ import de.hibiscus.tr.export.HibiscusExporter;
 import de.hibiscus.tr.model.TradeRepublicError;
 import de.hibiscus.tr.model.TransactionEvent;
 import de.hibiscus.tr.timeline.TimelineProcessor;
+import de.hibiscus.tr.util.VersionInfo;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
@@ -26,7 +27,7 @@ import picocli.CommandLine.Parameters;
 @Command(
     name = "tr-hibiscus",
     mixinStandardHelpOptions = true,
-    version = "1.1.0",
+    versionProvider = HibiscusExportCli.VersionProvider.class,
     description = "Export Trade Republic transaction data to Hibiscus banking software format"
 )
 public class HibiscusExportCli implements Callable<Integer> {
@@ -143,6 +144,16 @@ public class HibiscusExportCli implements Callable<Integer> {
         } else {
             System.setProperty("org.slf4j.simpleLogger.defaultLogLevel", "warn");
             System.setProperty("org.slf4j.simpleLogger.log.de.hibiscus.tr", "info");
+        }
+    }
+
+    /**
+     * Version provider for picocli to dynamically load version from properties
+     */
+    static class VersionProvider implements CommandLine.IVersionProvider {
+        @Override
+        public String[] getVersion() {
+            return new String[] { VersionInfo.getVersion() };
         }
     }
 }
