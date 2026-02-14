@@ -10,6 +10,7 @@ import org.jdom2.Element;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
@@ -77,7 +78,8 @@ class HibiscusExporterTest {
         // Should not throw exception
         assertDoesNotThrow(() -> exporter.exportTransactions(events));
 
-        // Check if XML file was created (note: without proper details, transaction might be filtered out)
+        // Check if XML file was created (note: without proper details, transaction
+        // might be filtered out)
         // This is more of a smoke test to ensure no exceptions are thrown
     }
 
@@ -170,11 +172,11 @@ class HibiscusExporterTest {
     }
 
     /**
-     * Test transaction export for a card payment.
+     * Test transaction export for a domestic card payment.
      *
      */
     @Test
-    void testExportCardPayment() throws Exception {
+    void testExportCardPaymentDomestic() throws Exception {
         TransactionEvent event = createTransactionEventFromFile("src/test/data/card-payment.json");
 
         Element xmlElement = exporter.createTransactionElement(event, 0);
@@ -200,6 +202,61 @@ class HibiscusExporterTest {
         Element artElement = xmlElement.getChild("art");
         assertNotNull(artElement);
         assertEquals("Kartenzahlung", artElement.getText());
+
+        // Verify no exchange rate comment for domestic transactions
+        Element kommentarElement = xmlElement.getChild("kommentar");
+        if (kommentarElement != null) {
+            String kommentar = kommentarElement.getText();
+            assertTrue(kommentar == null || kommentar.isEmpty(),
+                    "Domestic card payments should not have exchange rate comments");
+        }
+    }
+
+    /**
+     * Betrag: 12.132,00 ₹
+     * Wechselkurs: 1 ₹ 0,009551 €
+     * Gesamt: 115,87 €
+     */
+    @Test
+    void testExportCardPaymentWithExchangeRate() throws Exception {
+        TransactionEvent event = createTransactionEventFromFile("src/test/data/card-payment-with-exchange-rate.json");
+
+        Element xmlElement = exporter.createTransactionElement(event, 0);
+
+        assertNotNull(xmlElement);
+
+        // Check betrag is -115.87
+        Element betragElement = xmlElement.getChild("betrag");
+        assertNotNull(betragElement);
+        assertEquals("-115.87", betragElement.getText());
+
+        // Check empfaenger_name is TOKKI AND TORA
+        Element empfaengerNameElement = xmlElement.getChild("empfaenger_name");
+        assertNotNull(empfaengerNameElement);
+        assertEquals("TOKKI AND TORA", empfaengerNameElement.getText());
+
+        // Check zweck is TOKKI AND TORA
+        Element zweckElement = xmlElement.getChild("zweck");
+        assertNotNull(zweckElement);
+        assertEquals("TOKKI AND TORA", zweckElement.getText());
+
+        // Check art is Kartenzahlung
+        Element artElement = xmlElement.getChild("art");
+        assertNotNull(artElement);
+        assertEquals("Kartenzahlung", artElement.getText());
+
+        // Verify exchange rate comment
+        Element kommentarElement = xmlElement.getChild("kommentar");
+        assertNotNull(kommentarElement);
+        String kommentar = kommentarElement.getText();
+
+        // Note: The JSON data uses non-breaking spaces (\u00A0) before currency symbols
+        assertTrue(kommentar.contains("Betrag: 12.132,00\u00A0₹"),
+                "Comment should contain foreign currency amount");
+        assertTrue(kommentar.contains("Wechselkurs: 1\u00A0₹ 0,009551\u00A0€"),
+                "Comment should contain exchange rate");
+        assertTrue(kommentar.contains("Gesamt: 115,87\u00A0€"),
+                "Comment should contain EUR total");
     }
 
     /**

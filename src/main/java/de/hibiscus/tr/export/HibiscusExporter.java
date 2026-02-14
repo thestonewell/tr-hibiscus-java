@@ -264,6 +264,7 @@ public class HibiscusExporter {
             // card payment case
             empfaengerName = getDetailValue(event, Arrays.asList("Übersicht", "data", "Händler", "detail", "text"));
             zweck = event.getTitle();
+            comment = buildCardPaymentComment(event);
         } else if (event.getEventType() == null && "Zinsen".equals(event.getTitle())) {
             // interest case
             zweck = event.getTitle() + " " + event.getSubtitle();
@@ -874,6 +875,43 @@ public class HibiscusExporter {
 
         } catch (Exception e) {
             logger.warn("Error building interest payout comment for event {}: {}", event.getId(), e.getMessage());
+        }
+
+        return comment.toString();
+    }
+
+    /**
+     * Build detailed comment for card payment transactions with exchange rate information.
+     * Only generates a comment if the transaction involves foreign currency exchange.
+     *
+     * @param event The transaction event containing card payment details
+     * @return Comment string with exchange rate details, or empty string if no exchange rate data
+     */
+    private String buildCardPaymentComment(TransactionEvent event) {
+        StringBuilder comment = new StringBuilder();
+
+        try {
+            // Check for foreign currency amount (distinguishes foreign from domestic)
+            String betrag = getDetailValue(event, Arrays.asList("Übersicht", "data", "Betrag", "detail", "text"));
+
+            // Only generate comment if Betrag exists (indicates foreign currency transaction)
+            if (betrag != null) {
+                comment.append("Betrag: ").append(betrag).append("\n");
+
+                // Extract exchange rate using getDetailValue
+                String wechselkurs = getDetailValue(event, Arrays.asList("Übersicht", "data", "Wechselkurs", "detail", "text"));
+                if (wechselkurs != null) {
+                    comment.append("Wechselkurs: ").append(wechselkurs).append("\n");
+                }
+
+                // Extract total EUR amount using getDetailValue
+                String gesamt = getDetailValue(event, Arrays.asList("Übersicht", "data", "Gesamt", "detail", "text"));
+                if (gesamt != null) {
+                    comment.append("Gesamt: ").append(gesamt).append("\n");
+                }
+            }
+        } catch (Exception e) {
+            logger.warn("Error building card payment comment for event {}: {}", event.getId(), e.getMessage());
         }
 
         return comment.toString();
