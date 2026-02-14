@@ -313,6 +313,27 @@ class HibiscusExporterTest {
         Element artElement = xmlElement.getChild("art");
         assertNotNull(artElement);
         assertEquals("Sparplan", artElement.getText());
+
+        // Validate savings plan comment
+        Element kommentarElement = xmlElement.getChild("kommentar");
+        assertNotNull(kommentarElement, "Savings plan should have a comment with execution details");
+        String kommentar = kommentarElement.getText();
+
+        // Verify comment contains key fields
+        assertTrue(kommentar.contains("Sparplan: Ausgeführt"),
+                "Comment should contain savings plan status");
+        assertTrue(kommentar.contains("Zahlung: Cash"),
+                "Comment should contain payment source");
+        assertTrue(kommentar.contains("Asset: Snowflake (A)"),
+                "Comment should contain asset name");
+        assertTrue(kommentar.contains("Aktien: 0,251231"),
+                "Comment should contain number of shares");
+        assertTrue(kommentar.contains("Aktienkurs: 199,02"),
+                "Comment should contain share price");
+        assertTrue(kommentar.contains("Gebühr: Kostenlos"),
+                "Comment should contain fee information");
+        assertTrue(kommentar.contains("Häufigkeit: Monatlich"),
+                "Comment should contain savings plan frequency");
     }
 
     /**
@@ -397,6 +418,23 @@ class HibiscusExporterTest {
         Element artElement = xmlElement.getChild("art");
         assertNotNull(artElement);
         assertEquals("Bardividende", artElement.getText());
+
+        // Validate dividend comment
+        Element kommentarElement = xmlElement.getChild("kommentar");
+        assertNotNull(kommentarElement, "Dividend should have a comment with transaction details");
+        String kommentar = kommentarElement.getText();
+
+        // Verify comment contains key fields
+        assertTrue(kommentar.contains("Wertpapier: Realty Income"),
+                "Comment should contain security name");
+        assertTrue(kommentar.contains("Aktien: 20.390860"),
+                "Comment should contain number of shares");
+        assertTrue(kommentar.contains("Dividende pro Aktie: 0,27"),
+                "Comment should contain dividend per share");
+        assertTrue(kommentar.contains("Steuer: -1,22"),
+                "Comment should contain tax amount");
+        assertTrue(kommentar.contains("Gesamt: 3,47"),
+                "Comment should contain total amount");
     }
 
     /**
@@ -425,6 +463,25 @@ class HibiscusExporterTest {
         Element artElement = xmlElement.getChild("art");
         assertNotNull(artElement);
         assertEquals("Kauforder", artElement.getText());
+
+        // Validate buy order comment
+        Element kommentarElement = xmlElement.getChild("kommentar");
+        assertNotNull(kommentarElement, "Buy order should have a comment with order details");
+        String kommentar = kommentarElement.getText();
+
+        // Verify comment contains key fields
+        assertTrue(kommentar.contains("Portfolio: Brokerage"),
+                "Comment should contain portfolio type");
+        assertTrue(kommentar.contains("Asset: NVIDIA"),
+                "Comment should contain asset name");
+        assertTrue(kommentar.contains("Aktien: 23,8"),
+                "Comment should contain number of shares");
+        assertTrue(kommentar.contains("Aktienkurs: 159,32"),
+                "Comment should contain share price");
+        assertTrue(kommentar.contains("Gebühr: 1,00"),
+                "Comment should contain fee");
+        assertTrue(kommentar.contains("Summe: 3.792,82"),
+                "Comment should contain total sum");
     }
 
     /**
@@ -453,6 +510,31 @@ class HibiscusExporterTest {
         Element artElement = xmlElement.getChild("art");
         assertNotNull(artElement);
         assertEquals("Verkaufsorder", artElement.getText());
+
+        // Validate sell order comment
+        Element kommentarElement = xmlElement.getChild("kommentar");
+        assertNotNull(kommentarElement, "Sell order should have a comment with order and performance details");
+        String kommentar = kommentarElement.getText();
+
+        // Verify comment contains key order fields
+        assertTrue(kommentar.contains("Portfolio: Brokerage"),
+                "Comment should contain portfolio type");
+        assertTrue(kommentar.contains("Asset: NVIDIA"),
+                "Comment should contain asset name");
+        assertTrue(kommentar.contains("Aktien: 23,799441"),
+                "Comment should contain number of shares");
+        assertTrue(kommentar.contains("Aktienkurs: 159,38"),
+                "Comment should contain share price");
+        assertTrue(kommentar.contains("Gebühr: 1,00"),
+                "Comment should contain fee");
+        assertTrue(kommentar.contains("Summe: 3.597,36"),
+                "Comment should contain total sum");
+
+        // Verify comment contains performance fields
+        assertTrue(kommentar.contains("Rendite: 23,93"),
+                "Comment should contain return percentage");
+        assertTrue(kommentar.contains("Gewinn: 732,27"),
+                "Comment should contain profit/loss amount");
     }
 
     /**

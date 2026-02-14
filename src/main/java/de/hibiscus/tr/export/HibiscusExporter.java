@@ -273,9 +273,6 @@ public class HibiscusExporter {
         } else if (event.getEventType() == null && "Sparplan".equals(art)) {
             // savings plan case
             zweck = event.getTitle() + " Sparplan";
-            // TODO: add order details: asset, number of shares and share price
-            // TODO: add fees
-            // TODO: add Gegenkonto if not from Cash
             comment = buildSavingsPlanComment(event);
         } else if (event.getEventType() == null && "Saveback".equals(art)) {
             // Saveback case
@@ -293,24 +290,17 @@ public class HibiscusExporter {
             // Bardividende case
             zweck = event.getTitle() + " Bardividende";
             art = "Bardividende";
-            // TODO: add divident details: asset, number of shares and dividend per share
-            // TODO: add tax
             comment = buildDividendComment(event);
         } else if (event.getEventType() == null && "Kauforder".equals(event.getSubtitle())) {
             // Kauforder case
             zweck = event.getTitle() + " Kauforder";
             art = "Kauforder";
-            // TODO: add portfolio (brokerage, crypto, private equity, ...)
-            // comment with order details and fees
             comment = buildOrderComment(event);
         } else if (event.getEventType() == null && "Verkaufsorder".equals(event.getSubtitle())) {
             // Verkaufsorder case
             zweck = event.getTitle() + " Verkaufsorder";
             art = "Verkaufsorder";
-            // TODO: add portfolio (brokerage, crypto, private equity, ...)
-            // comment with order details and fees
             comment = buildOrderComment(event);
-            // TODO: add performance and win/loss amount
         } else if (event.getEventType() == null && "Steuerkorrektur".equals(event.getTitle())) {
             // Steuerkorrektur case
             zweck = event.getTitle();
@@ -656,6 +646,12 @@ public class HibiscusExporter {
         StringBuilder comment = new StringBuilder();
 
         try {
+            // Extract portfolio type (Brokerage, Crypto, Private Equity, etc.)
+            String portfolio = getDetailValue(event, Arrays.asList("Übersicht", "data", "Portfolio", "detail", "text"));
+            if (portfolio != null) {
+                comment.append("Portfolio: ").append(portfolio).append("\n");
+            }
+
             // Extract asset information
             String asset = getDetailValue(event, Arrays.asList("Übersicht", "data", "Asset", "detail", "text"));
             if (asset != null) {
@@ -697,6 +693,22 @@ public class HibiscusExporter {
             String gesamtsumme = getDetailValue(event, Arrays.asList("Übersicht", "data", "Summe", "detail", "text"));
             if (gesamtsumme != null) {
                 comment.append("Summe: ").append(gesamtsumme).append("\n");
+            }
+
+            // Add performance data for sell orders
+            JsonNode performanceSection = findInSections(event, "Performance");
+            if (performanceSection != null && performanceSection.has("data") && performanceSection.get("data").isArray()) {
+                JsonNode performanceData = performanceSection.get("data");
+
+                String rendite = extractBusinessDetail(performanceData, "Rendite");
+                if (rendite != null) {
+                    comment.append("Rendite: ").append(rendite).append("\n");
+                }
+
+                String gewinn = extractBusinessDetail(performanceData, "Gewinn");
+                if (gewinn != null) {
+                    comment.append("Gewinn: ").append(gewinn).append("\n");
+                }
             }
 
         } catch (Exception e) {

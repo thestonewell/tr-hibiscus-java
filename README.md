@@ -10,7 +10,7 @@ Es kann als Basis für ein Hibiscus-Plugin genutzt werden. Freiwillige vor.
 - Enhanced transaction details extraction for specialized event types:
   - **Card payments**: counter party, for international also exchange rate and foreign amount
   - **Buy order**: assest info, ISIN, shares, taxes, fees, totals
-  - **Sell order**: assest info, ISIN, shares, taxes, fees, totals
+  - **Sell order**: assest info, ISIN, shares, taxes, fees, totals, performance, profit/loss amount
   - **Dividends**: assest info, ISIN, shares, dividend per share, taxes, totals
   - **Savings Plans**: payment method, asset details, ISIN, transaction amounts, fees, frequency
   - **Savebacks**: asset info, ISIN, shares purchased, fees
