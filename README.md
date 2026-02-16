@@ -35,6 +35,17 @@ Es kann als Basis für ein Hibiscus-Plugin genutzt werden. Freiwillige vor.
 - export that documents are available
 - actually download the pdfs (and ideally rename them from pbxyz.pdf to include details like asset information in the filename)
 
+## Architecture
+
+The export module uses a Chain of Responsibility pattern with specialized handlers:
+
+- **TransactionHandler**: Interface defining canHandle() and extractData() methods
+- **Handler implementations**: CardPaymentHandler, OrderHandler, DividendHandler, etc.
+- **JsonDetailExtractor**: Utility for navigating nested JSON structures
+- **CommentBuilders**: Helper for formatting transaction comments
+
+Handlers are evaluated in priority order - first match wins. Order matters: specific handlers (e.g., DepositHandler checking subtitle) must come before generic handlers.
+
 ## Prerequisites
 
 - Java 17 or higher
@@ -135,6 +146,21 @@ src/main/java/de/hibiscus/tr/
 ├── auth/          # Authentication and login
 ├── cli/           # Command line interface
 ├── export/        # Hibiscus XML export functionality
+│   ├── HibiscusExporter.java          # Main exporter orchestration
+│   ├── TransactionHandler.java        # Handler interface
+│   ├── CardPaymentHandler.java        # Card payment transactions
+│   ├── OrderHandler.java              # Buy/sell orders
+│   ├── DividendHandler.java           # Dividend payments
+│   ├── SavingsPlanHandler.java        # Savings plan executions
+│   ├── SavebackHandler.java           # Saveback transactions
+│   ├── RoundUpHandler.java            # Round-up transactions
+│   ├── InterestHandler.java           # Interest payouts
+│   ├── DepositHandler.java            # Deposits
+│   ├── WithdrawalHandler.java         # Withdrawals
+│   ├── TaxAdjustmentHandler.java      # Tax adjustments
+│   ├── JsonDetailExtractor.java       # JSON navigation utility
+│   ├── CommentBuilders.java           # Comment formatting helpers
+│   └── TransactionCommentBuilder.java # Comment builder interface
 ├── model/         # Data models and exceptions
 └── timeline/      # Timeline processing
 ```
@@ -156,12 +182,18 @@ src/main/java/de/hibiscus/tr/
 2. **WebSocket Protocol**: Full Trade Republic WebSocket protocol with subscription management
 3. **Timeline Processing**: Paginated data retrieval with parallel detail fetching
 4. **XML Export**: Complete Hibiscus-compatible XML generation
-5. **Error Handling**: Comprehensive error handling and logging
+5. **Handler Chain**: Modular transaction type handling with Chain of Responsibility pattern
+6. **Transaction Types**: 11 specialized handlers for different transaction types
+7. **Error Handling**: Comprehensive error handling and logging
+8. **Filtering**: Advanced filtering with detailed statistics
 
 🔧 **Known Limitations**:
 
 - Large transaction histories may take time to process due to API rate limits
 - Debug mode generates many JSON files which can consume disk space
+- Legacy transaction format not yet re-enabled
+- Document availability export not implemented
+- PDF download functionality not implemented
 
 ## Development
 
@@ -188,9 +220,10 @@ mvn exec:java -Dexec.mainClass="de.hibiscus.tr.cli.HibiscusExportCli" -Dexec.arg
 
 The modular structure allows easy extension:
 
-- Add new export formats in the `export` package
-- Extend authentication methods in the `auth` package
-- Add new CLI commands in the `cli` package
+- **Add new transaction types**: Create handler implementing TransactionHandler, add to handler chain in HibiscusExporter
+- **Add new export formats**: Create new exporter class in `export/` package
+- **Extend authentication**: Add new authentication method in `auth/` package
+- **Add new CLI commands**: Extend options in `cli/` package
 
 ## License
 
