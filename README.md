@@ -62,7 +62,7 @@ cd tr-hibiscus-java
 mvn clean package
 
 # This creates a JAR file with all dependencies:
-# target/tr-hibiscus-export-1.1.1.jar
+# target/tr-hibiscus-export-1.1.2.jar
 ```
 
 ## Usage
@@ -70,13 +70,13 @@ mvn clean package
 ### Basic Export
 
 ```bash
-java -jar target/tr-hibiscus-export-1.1.1.jar -n +49123456789 -p 1234 /path/to/output
+java -jar target/tr-hibiscus-export-1.1.2.jar -n +49123456789 -p 1234 /path/to/output
 ```
 
 ### Command Line Options
 
 ```bash
-java -jar target/tr-hibiscus-export-1.1.1.jar -n <phoneNo> -p <pin> [OPTIONS] OUTPUT_DIRECTORY
+java -jar target/tr-hibiscus-export-1.1.2.jar -n <phoneNo> -p <pin> [OPTIONS] OUTPUT_DIRECTORY
 
 Required Parameters:
   -n, --phone-no=<phoneNo>     TradeRepublic phone number (international format)
@@ -97,16 +97,16 @@ Options:
 
 ```bash
 # Export all transactions
-java -jar target/tr-hibiscus-export-1.1.1.jar -n +49123456789 -p 1234 /home/user/hibiscus-export
+java -jar target/tr-hibiscus-export-1.1.2.jar -n +49123456789 -p 1234 /home/user/hibiscus-export
 
 # Export transactions from last 30 days including pending ones
-java -jar target/tr-hibiscus-export-1.1.1.jar -n +49123456789 -p 1234 --last-days 30 --include-pending /home/user/hibiscus-export
+java -jar target/tr-hibiscus-export-1.1.2.jar -n +49123456789 -p 1234 --last-days 30 --include-pending /home/user/hibiscus-export
 
 # Export with save transaction details
-java -jar target/tr-hibiscus-export-1.1.1.jar -n +49123456789 -p 1234 --save-details /home/user/hibiscus-export
+java -jar target/tr-hibiscus-export-1.1.2.jar -n +49123456789 -p 1234 --save-details /home/user/hibiscus-export
 
 # Export with verbose logging
-java -jar target/tr-hibiscus-export-1.1.1.jar -n +49123456789 -p 1234 --verbose /home/user/hibiscus-export
+java -jar target/tr-hibiscus-export-1.1.2.jar -n +49123456789 -p 1234 --verbose /home/user/hibiscus-export
 ```
 
 ## Authentication
