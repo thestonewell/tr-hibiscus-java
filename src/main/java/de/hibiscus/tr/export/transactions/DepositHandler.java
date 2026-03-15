@@ -12,7 +12,8 @@ public final class DepositHandler implements TransactionHandler {
     @Override
     public boolean canHandle(TransactionEvent event) {
         String art = JsonDetailExtractor.getTransactionType(event);
-        return event.getEventType() == null && "Überweisung".equals(art) && "Fertig".equals(event.getSubtitle());
+        return (event.getEventType() == null || "BANK_TRANSACTION_INCOMING".equals(event.getEventType()))
+                && "Überweisung".equals(art) && "Fertig".equals(event.getSubtitle());
     }
 
     /**
@@ -22,8 +23,10 @@ public final class DepositHandler implements TransactionHandler {
     public TransactionData extractData(TransactionEvent event) {
         String art = JsonDetailExtractor.getTransactionType(event);
         double betrag = event.getAmount().getValue();
-        String empfaengerKonto = JsonDetailExtractor.getDetailValue(event, Arrays.asList("Absender", "data", "IBAN", "detail", "text"));
-        String empfaengerName = JsonDetailExtractor.getDetailValue(event, Arrays.asList("Absender", "data", "Absender", "detail", "text"));
+        String empfaengerKonto = JsonDetailExtractor.getDetailValue(event,
+                Arrays.asList("Absender", "data", "IBAN", "detail", "text"));
+        String empfaengerName = JsonDetailExtractor.getDetailValue(event,
+                Arrays.asList("Absender", "data", "Absender", "detail", "text"));
         String zweck = JsonDetailExtractor.getNoteText(event);
         return new TransactionData(empfaengerKonto, empfaengerName, zweck, art, betrag, null);
     }

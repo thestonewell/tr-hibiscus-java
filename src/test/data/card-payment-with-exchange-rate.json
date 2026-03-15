@@ -4,7 +4,7 @@
   "title": "TOKKI AND TORA",
   "subtitle": null,
   "timestamp": "2026-01-13T16:54:02.769+0000",
-  "eventType": null,
+  "eventType": "CARD_TRANSACTION",
   "amount": {
     "value": -115.87,
     "currency": "EUR"

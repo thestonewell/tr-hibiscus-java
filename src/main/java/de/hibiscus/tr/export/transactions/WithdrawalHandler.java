@@ -12,7 +12,8 @@ public final class WithdrawalHandler implements TransactionHandler {
     @Override
     public boolean canHandle(TransactionEvent event) {
         String art = JsonDetailExtractor.getTransactionType(event);
-        return event.getEventType() == null && "Überweisung".equals(art) && "Gesendet".equals(event.getSubtitle());
+        return (event.getEventType() == null || "BANK_TRANSACTION_OUTGOING".equals(event.getEventType()))
+                && "Überweisung".equals(art) && "Gesendet".equals(event.getSubtitle());
     }
 
     /**

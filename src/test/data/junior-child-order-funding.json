@@ -1,0 +1,93 @@
+{
+  "timestampAsInstant": 1772498640.062,
+  "id": "131bf336-4eab-023c-099a-b32cb0cb760b",
+  "title": "FTSE All-World USD (Acc)",
+  "subtitle": "Saving executed · FirstName",
+  "timestamp": "2026-03-03T00:44:00.062+0000",
+  "eventType": "JUNIOR_CHILD_ORDER_FUNDING",
+  "amount": {
+    "value": -100,
+    "currency": "EUR"
+  },
+  "details": {
+    "id": "8bd5cdb4-e9e7-4235-ac0d-c6f1af63ceb2",
+    "sections": [
+      {
+        "title": "Du hast 100,00 € für FirstName gespart",
+        "data": {
+          "icon": {
+            "asset": "logos/IE00BK5BQT80/v2",
+            "badge": null
+          },
+          "timestamp": "2026-03-03T00:44:00.061043Z",
+          "status": "executed"
+        },
+        "type": "header"
+      },
+      {
+        "title": "Übersicht",
+        "data": [
+          {
+            "title": "Überweisen",
+            "detail": {
+              "text": "Abgeschlossen",
+              "functionalStyle": "EXECUTED",
+              "type": "status"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Zahlung",
+            "detail": {
+              "text": "Dein Cash",
+              "trend": "positive",
+              "displayValue": {
+                "text": "Dein Cash"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Empfänger",
+            "detail": {
+              "text": "FirstName",
+              "trend": "positive",
+              "displayValue": {
+                "text": "FirstName"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Vermögenswert",
+            "detail": {
+              "text": "FTSE All-World USD (Acc)",
+              "trend": "positive",
+              "displayValue": {
+                "text": "FTSE All-World USD (Acc)"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Betrag",
+            "detail": {
+              "text": "100,00 €",
+              "trend": "positive",
+              "displayValue": {
+                "text": "100,00 €"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "table"
+      }
+    ]
+  },
+  "status": "EXECUTED"
+}

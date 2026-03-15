@@ -4,7 +4,7 @@
   "title": "Zinsen",
   "subtitle": "2 % p.a.",
   "timestamp": "2025-12-01T20:18:01.423+0000",
-  "eventType": null,
+  "eventType": "INTEREST_PAYOUT",
   "amount": {
     "value": 25.74,
     "currency": "EUR"

@@ -48,6 +48,8 @@ public final class TransactionHandlerFactory {
         list.add(new OrderHandler("Kauforder"));
         list.add(new OrderHandler("Verkaufsorder"));
         list.add(new TaxAdjustmentHandler());
+        list.add(new JuniorP2PTransferHandler());
+        list.add(new JuniorChildOrderFundingHandler());
         return list;
     }
 

@@ -14,7 +14,8 @@ public final class SavebackHandler implements TransactionHandler {
     @Override
     public boolean canHandle(TransactionEvent event) {
         String art = JsonDetailExtractor.getTransactionType(event);
-        return event.getEventType() == null && "Saveback".equals(art);
+        return (event.getEventType() == null || "SAVEBACK_AGGREGATE".equals(event.getEventType()))
+                && "Saveback".equals(art);
     }
 
     /**
@@ -35,14 +36,19 @@ public final class SavebackHandler implements TransactionHandler {
     private String buildComment(TransactionEvent event) {
         StringBuilder comment = new StringBuilder();
 
-        String savebackStatus = JsonDetailExtractor.getDetailValue(event, Arrays.asList("Übersicht", "data", "Saveback", "detail", "text"));
-        if (savebackStatus != null) comment.append("Saveback: ").append(savebackStatus).append("\n");
+        String savebackStatus = JsonDetailExtractor.getDetailValue(event,
+                Arrays.asList("Übersicht", "data", "Saveback", "detail", "text"));
+        if (savebackStatus != null)
+            comment.append("Saveback: ").append(savebackStatus).append("\n");
 
-        String asset = JsonDetailExtractor.getDetailValue(event, Arrays.asList("Übersicht", "data", "Asset", "detail", "text"));
-        if (asset != null) comment.append("Asset: ").append(asset).append("\n");
+        String asset = JsonDetailExtractor.getDetailValue(event,
+                Arrays.asList("Übersicht", "data", "Asset", "detail", "text"));
+        if (asset != null)
+            comment.append("Asset: ").append(asset).append("\n");
 
         String isin = JsonDetailExtractor.getISIN(event);
-        if (isin != null) comment.append("ISIN: ").append(isin).append("\n");
+        if (isin != null)
+            comment.append("ISIN: ").append(isin).append("\n");
 
         JsonNode overview = JsonDetailExtractor.findSection(event, "Übersicht");
         if (overview != null && overview.has("data") && overview.get("data").isArray()) {
@@ -63,11 +69,15 @@ public final class SavebackHandler implements TransactionHandler {
             }
         }
 
-        String gebuehr = JsonDetailExtractor.getDetailValue(event, Arrays.asList("Übersicht", "data", "Gebühr", "detail", "text"));
-        if (gebuehr != null) comment.append("Gebühr: ").append(gebuehr).append("\n");
+        String gebuehr = JsonDetailExtractor.getDetailValue(event,
+                Arrays.asList("Übersicht", "data", "Gebühr", "detail", "text"));
+        if (gebuehr != null)
+            comment.append("Gebühr: ").append(gebuehr).append("\n");
 
-        String gesamt = JsonDetailExtractor.getDetailValue(event, Arrays.asList("Übersicht", "data", "Gesamt", "detail", "text"));
-        if (gesamt != null) comment.append("Gesamt: ").append(gesamt).append("\n");
+        String gesamt = JsonDetailExtractor.getDetailValue(event,
+                Arrays.asList("Übersicht", "data", "Gesamt", "detail", "text"));
+        if (gesamt != null)
+            comment.append("Gesamt: ").append(gesamt).append("\n");
 
         return comment.toString();
     }

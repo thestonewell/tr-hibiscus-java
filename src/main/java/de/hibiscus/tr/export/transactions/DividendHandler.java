@@ -13,7 +13,8 @@ public final class DividendHandler implements TransactionHandler {
 
     @Override
     public boolean canHandle(TransactionEvent event) {
-        return event.getEventType() == null && "Bardividende".equals(event.getSubtitle());
+        return (event.getEventType() == null || "SSP_CORPORATE_ACTION_CASH".equals(event.getEventType()))
+                && "Bardividende".equals(event.getSubtitle());
     }
 
     /**
@@ -33,26 +34,33 @@ public final class DividendHandler implements TransactionHandler {
     private String buildComment(TransactionEvent event) {
         StringBuilder comment = new StringBuilder();
 
-        String stock = JsonDetailExtractor.getDetailValue(event, Arrays.asList("Übersicht", "data", "Wertpapier", "detail", "text"));
-        if (stock != null) comment.append("Wertpapier: ").append(stock).append("\n");
+        String stock = JsonDetailExtractor.getDetailValue(event,
+                Arrays.asList("Übersicht", "data", "Wertpapier", "detail", "text"));
+        if (stock != null)
+            comment.append("Wertpapier: ").append(stock).append("\n");
 
         String isin = JsonDetailExtractor.getISIN(event);
-        if (isin != null) comment.append("ISIN: ").append(isin).append("\n");
+        if (isin != null)
+            comment.append("ISIN: ").append(isin).append("\n");
 
         JsonNode businessSection = JsonDetailExtractor.findSection(event, "Geschäft");
         if (businessSection != null && businessSection.has("data") && businessSection.get("data").isArray()) {
             JsonNode businessData = businessSection.get("data");
             String shares = JsonDetailExtractor.extractFromDataArray(businessData, "Aktien");
-            if (shares != null) comment.append("Aktien: ").append(shares).append("\n");
+            if (shares != null)
+                comment.append("Aktien: ").append(shares).append("\n");
 
             String dividendPerShare = JsonDetailExtractor.extractFromDataArray(businessData, "Dividende pro Aktie");
-            if (dividendPerShare != null) comment.append("Dividende pro Aktie: ").append(dividendPerShare).append("\n");
+            if (dividendPerShare != null)
+                comment.append("Dividende pro Aktie: ").append(dividendPerShare).append("\n");
 
             String tax = JsonDetailExtractor.extractFromDataArray(businessData, "Steuer");
-            if (tax != null) comment.append("Steuer: ").append(tax).append("\n");
+            if (tax != null)
+                comment.append("Steuer: ").append(tax).append("\n");
 
             String total = JsonDetailExtractor.extractFromDataArray(businessData, "Gesamt");
-            if (total != null) comment.append("Gesamt: ").append(total).append("\n");
+            if (total != null)
+                comment.append("Gesamt: ").append(total).append("\n");
         }
 
         return comment.toString();

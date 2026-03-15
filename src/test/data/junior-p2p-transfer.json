@@ -1,0 +1,75 @@
+{
+  "timestampAsInstant": 1773336314.133,
+  "id": "331246fd-246d-4cbf-a395-14f2ecc0629c",
+  "title": "My Child",
+  "subtitle": null,
+  "timestamp": "2026-03-12T17:25:14.133+0000",
+  "eventType": "JUNIOR_P2P_TRANSFER",
+  "amount": {
+    "value": 20,
+    "currency": "EUR"
+  },
+  "details": {
+    "id": "331246fd-246d-4cbf-a395-14f2ecc0629c",
+    "sections": [
+      {
+        "title": "Du hast 20,00 € erhalten",
+        "data": {
+          "icon": {
+            "asset": "logos/contacts-B-Grey/v2",
+            "badge": null
+          },
+          "timestamp": "2026-03-12T17:25:14.127179Z",
+          "status": "executed"
+        },
+        "type": "header"
+      },
+      {
+        "title": "Übersicht",
+        "data": [
+          {
+            "title": "Überweisen",
+            "detail": {
+              "text": "Abgeschlossen",
+              "functionalStyle": "EXECUTED",
+              "type": "status"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Absender",
+            "detail": {
+              "text": "My Child",
+              "trend": "positive",
+              "displayValue": {
+                "text": "My Child"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          },
+          {
+            "title": "Gesamt",
+            "detail": {
+              "text": "+20,00 €",
+              "trend": "positive",
+              "displayValue": {
+                "text": "+20,00 €"
+              },
+              "type": "text"
+            },
+            "style": "plain"
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "data": {
+          "text": "Taschengeld"
+        },
+        "type": "note"
+      }
+    ]
+  },
+  "status": "EXECUTED"
+}

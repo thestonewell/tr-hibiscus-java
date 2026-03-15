@@ -54,7 +54,7 @@ java -jar target/tr-hibiscus-export-${project.version}.jar -n <phone> -p <pin> -
     - `TransactionHandler`: Interface with `canHandle(event, art)` and `extractData(event, art, betrag)` → TransactionData
     - `TransactionHandlerFactory`: Singleton managing handler chain (sequential evaluation, first match wins)
     - `JsonDetailExtractor`: Path-based JSON navigation utility shared across handlers
-    - Handler implementations: Deposit, Withdrawal, CardPayment, Order (buy/sell), Dividend, Interest, SavingsPlan, Saveback, RoundUp, TaxAdjustment, Default
+    - Handler implementations: Deposit, Withdrawal, CardPayment, Order (buy/sell), Dividend, Interest, SavingsPlan, Saveback, RoundUp, TaxAdjustment, JuniorP2PTransfer, JuniorChildOrderFunding, Default
 - **model**: `TransactionEvent`, `TradeRepublicError` with Jackson annotations
 - **timeline**: Paginated fetch with parallel detail processing (`TimelineProcessor`)
 - **util**: `VersionInfo` - loads version from filtered properties
@@ -96,7 +96,7 @@ JUnit Jupiter with `@TempDir` for file operations. Tests in `*Test.java`, data i
 
 - Transactions without amounts are automatically filtered out
 - Status must be one of: PENDING, EXECUTED, CANCELED, CREATED
-- Card verification transactions (status.action == "cardVerification") are filtered out
+- Card verification transactions (eventType == "CARD_VERIFICATION") are filtered out
 - Transactions are sorted chronologically (oldest first) before export
 - The `details` field is a JsonNode containing nested transaction-specific data
 
@@ -109,7 +109,14 @@ JUnit Jupiter with `@TempDir` for file operations. Tests in `*Test.java`, data i
 ### Transaction Types
 
 **Handler Priority** (see `TransactionHandlerFactory.initializeHandlers()`):
-Deposit → Withdrawal → CardPayment → Interest → SavingsPlan → Saveback → RoundUp → Dividend → Order (Buy/Sell) → TaxAdjustment
+Deposit → Withdrawal → CardPayment → Interest → SavingsPlan → Saveback → RoundUp → Dividend → Order (Buy/Sell) → TaxAdjustment → JuniorP2PTransfer → JuniorChildOrderFunding
+
+**EventType matching**: Handlers accept both null eventType (older API) and explicit eventType strings (newer API):
+- `DepositHandler`: `BANK_TRANSACTION_INCOMING`
+- `WithdrawalHandler`: `BANK_TRANSACTION_OUTGOING`
+- `CardPaymentHandler`: `CARD_TRANSACTION`
+- `JuniorP2PTransferHandler`: `JUNIOR_P2P_TRANSFER` (incoming deposit from junior account)
+- `JuniorChildOrderFundingHandler`: `JUNIOR_CHILD_ORDER_FUNDING` (outgoing transfer to fund junior order)
 
 **Adding New Types**:
 1. Create new final class implementing `TransactionHandler` in `transactions` package

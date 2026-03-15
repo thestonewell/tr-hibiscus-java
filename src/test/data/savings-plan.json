@@ -4,7 +4,7 @@
   "title": "Snowflake (A)",
   "subtitle": "Sparplan ausgeführt",
   "timestamp": "2025-09-02T14:13:07.235+0000",
-  "eventType": null,
+  "eventType": "TRADING_SAVINGSPLAN_EXECUTED",
   "amount": { "value": -50.0, "currency": "EUR" },
   "details": {
     "id": "0e5b7138-a012-4aa2-aebc-bf884563de9b",

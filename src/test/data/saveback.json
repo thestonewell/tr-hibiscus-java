@@ -4,7 +4,7 @@
   "title": "Allianz",
   "subtitle": "Saveback",
   "timestamp": "2025-11-03T08:57:56.897+0000",
-  "eventType": null,
+  "eventType": "SAVEBACK_AGGREGATE",
   "amount": { "value": -15.0, "currency": "EUR" },
   "details": {
     "id": "0c6999f5-e7a7-4b2e-8964-31fdbef093fe",

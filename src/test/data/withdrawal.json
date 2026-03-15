@@ -4,7 +4,7 @@
   "title": "Max Mustermann",
   "subtitle": "Gesendet",
   "timestamp": "2025-12-20T23:26:33.045+0000",
-  "eventType": null,
+  "eventType": "BANK_TRANSACTION_OUTGOING",
   "amount": { "value": -500.0, "currency": "EUR" },
   "details": {
     "id": "67b867be-51c3-4b80-8567-3f63a31cac20",

@@ -159,7 +159,7 @@ public class HibiscusExporter {
 
         for (TransactionEvent event : events) {
             // Filter out card verification events (no financial relevance for Hibiscus)
-            if ("card_successful_verification".equals(event.getEventType())) {
+            if ("CARD_VERIFICATION".equals(event.getEventType())) {
                 logger.debug("Filtering out card verification event: {}", event.getId());
                 cardVerificationEventsFiltered++;
                 continue;
@@ -378,7 +378,8 @@ public class HibiscusExporter {
      */
     private void saveDebugFile(TransactionEvent event) {
         try {
-            String filename = "debug-" + event.getId().replace(":", ".") + ".json";
+            String safeId = event.getId().replaceAll("[^a-zA-Z0-9\\-_]", "_");
+            String filename = "debug-" + safeId + ".json";
             Path debugFile = outputPath.resolve(filename);
             objectMapper.writeValue(debugFile.toFile(), event);
             logger.info("Saved debug file: {}", debugFile);

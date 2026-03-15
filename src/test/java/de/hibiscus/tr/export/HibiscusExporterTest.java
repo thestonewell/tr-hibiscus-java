@@ -565,4 +565,73 @@ class HibiscusExporterTest {
         assertEquals("Steuerkorrektur", artElement.getText());
     }
 
+    /**
+     * Test transaction export for a received deposit from a junior account.
+     *
+     * In addition to defaults check for: * sender Name * purpose
+     * (Verwendungszweck)
+     */
+    @Test
+    void testExportJuniorP2PTransfer() throws Exception {
+        TransactionEvent event = createTransactionEventFromFile("src/test/data/junior-p2p-transfer.json");
+
+        Element xmlElement = exporter.createTransactionElement(event, 0);
+
+        assertNotNull(xmlElement);
+
+        // Check betrag is 20
+        Element betragElement = xmlElement.getChild("betrag");
+        assertNotNull(betragElement);
+        assertEquals("20.0", betragElement.getText());
+
+        // Check empfaenger_name is My Child
+        Element empfaengerNameElement = xmlElement.getChild("empfaenger_name");
+        assertNotNull(empfaengerNameElement);
+        assertEquals("My Child", empfaengerNameElement.getText());
+
+        // Check zweck is Taschengeld
+        Element zweckElement = xmlElement.getChild("zweck");
+        assertNotNull(zweckElement);
+        assertEquals("Taschengeld", zweckElement.getText());
+
+        // Check art is Überweisung
+        Element artElement = xmlElement.getChild("art");
+        assertNotNull(artElement);
+        assertEquals("Überweisung", artElement.getText());
+    }
+
+    /**
+     * Test transaction export for a received deposit from a junior account.
+     *
+     * In addition to defaults check for: * sender Name * purpose
+     * (Verwendungszweck)
+     */
+    @Test
+    void testExportJuniorChildOrderFunding() throws Exception {
+        TransactionEvent event = createTransactionEventFromFile("src/test/data/junior-child-order-funding.json");
+
+        Element xmlElement = exporter.createTransactionElement(event, 0);
+
+        assertNotNull(xmlElement);
+
+        // Check betrag is -100
+        Element betragElement = xmlElement.getChild("betrag");
+        assertNotNull(betragElement);
+        assertEquals("-100.0", betragElement.getText());
+
+        // Check empfaenger_name is Kinderdepot FirstName
+        Element empfaengerNameElement = xmlElement.getChild("empfaenger_name");
+        assertNotNull(empfaengerNameElement);
+        assertEquals("Kinderdepot FirstName", empfaengerNameElement.getText());
+
+        // Check zweck is Vermögenswert: ...
+        Element zweckElement = xmlElement.getChild("zweck");
+        assertNotNull(zweckElement);
+        assertEquals("Vermögenswert: FTSE All-World USD (Acc)", zweckElement.getText());
+
+        // Check art is Überweisung
+        Element artElement = xmlElement.getChild("art");
+        assertNotNull(artElement);
+        assertEquals("Überweisung", artElement.getText());
+    }
 }

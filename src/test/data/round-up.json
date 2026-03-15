@@ -4,7 +4,7 @@
   "title": "Allianz",
   "subtitle": "Round up",
   "timestamp": "2025-12-16T08:57:04.397+0000",
-  "eventType": null,
+  "eventType": "SPARE_CHANGE_AGGREGATE",
   "amount": { "value": -16.96, "currency": "EUR" },
   "details": {
     "id": "ae294ad4-eb7a-43a3-a2bc-b8263b6f1db1",
